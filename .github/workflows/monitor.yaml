@@ -6,8 +6,8 @@ on:
   schedule:
     - cron: "0 0 * * *"
 env:
-  MULLED_NAMESPACE: jmchiltonorg
-  GITHUB_USER: dockerhub-toolshed
+  # GITHUB_USER: dockerhub-toolshed
+  GITHUB_USER: iwc-workflows-bot
 jobs:
   monitor:
     name: Run planemo monitor
