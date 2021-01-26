@@ -42,11 +42,11 @@ jobs:
           path: /home/runner/.tmate.conf
           contents: 'set tmate-authorized-keys "/home/runner/authorized_keys"'
           write-mode: append
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       - uses: fusion-engineering/setup-git-credentials@v2
         with:
           credentials: 'https://${{env.GITHUB_USER}}:${{secrets.DOCKERHUB_TOOLSHED_WORKFLOWS}}@github.com/'
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: planemo monitor
         run: 'bash ./monitor.sh "${{ matrix.subset }}"'
         env:
