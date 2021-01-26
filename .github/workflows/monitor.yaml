@@ -37,11 +37,11 @@ jobs:
 
           write-mode: append
       - run: chmod 644 /home/runner/authorized_keys
-      # - uses: DamianReeves/write-file-action@v1.0
-      #   with:
-      #     path: /home/runner/.tmate.conf
-      #     contents: 'set tmate-authorized-keys "/home/runner/authorized_keys"'
-      #     write-mode: append
+      - uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: /home/runner/.tmate.conf
+          contents: 'set tmate-authorized-keys "/home/runner/authorized_keys"'
+          write-mode: append
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
       - uses: fusion-engineering/setup-git-credentials@v2
